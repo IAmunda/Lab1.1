@@ -62,16 +62,18 @@ public class Ejemplar {
 		return this.estado == 1;
 	}
 	
-	public void estadoEjemplar(Ejemplar ejemplar) {
+	public boolean estaDesaparecido() {
 		
-		if(ejemplar.getEstado() == 0){
-			System.out.print("El ejemplar está libre");
+		return this.estado == -1;
+	}
+	
+	public int estadoEjemplar() {
+		
+		if(this.estaLibre()) {
+			return 0;
 		}
-		if(ejemplar.getEstado() == 1){
-			System.out.print("El ejemplar está prestado");
-		}
-		if(ejemplar.getEstado() == -1) {
-			System.out.print("El ejemplar está desparecido");
+		if(this.estaPrestado()) {
+			return 1;
 		}
 	}
 	
@@ -80,8 +82,8 @@ public class Ejemplar {
 	}
 	//Constructoras
 	
-	public Ejemplar(Ejemplar ejemplar) {
-		ejemplar.setEstado(0);
+	public Ejemplar() {
+		this.setEstado(0);
 	}
 	
 	public Ejemplar(String signatura, String titulo, String autor, int añoEdicion) {
