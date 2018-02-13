@@ -69,12 +69,34 @@ public class Ejemplar {
 	
 	public int estadoEjemplar() {
 		
+		int e = 0;
+		
 		if(this.estaLibre()) {
-			return 0;
+			e = 0;
 		}
 		if(this.estaPrestado()) {
-			return 1;
+			e = 1;
 		}
+		if(estaDesaparecido()) {
+			e = -1;
+		}
+		return e;
+	}
+	
+	public String queEstado() {
+		
+		String e = new String();
+		
+		if(estaLibre()) {
+			e = "libre";
+		}
+		if(estaPrestado()) {
+			e = "prestado";
+		}
+		if(estaDesaparecido()) {
+			e = "desaparecido";
+		}
+		return e;
 	}
 	
 	public String toString(Ejemplar ejemplar) {

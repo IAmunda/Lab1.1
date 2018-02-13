@@ -44,7 +44,7 @@ public class ProbarEjemplar {
 	}
 
 	public static void casoQueEstado(int caso, Ejemplar e, String esperado){
-		String resultado=e.queEstado();
+		String resultado = e.queEstado();
 		System.out.print(" casoQueEstado "+caso+": ");
 		if (esperado.equals(resultado)) System.out.println("PASA");
 		else System.out.println("ERROR: Valor esperado "+esperado+", resultado obtenido "+resultado);
